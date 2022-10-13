@@ -13,9 +13,7 @@ const knex = require('knex');
 const db = knex({
     connection: {
         connectionString: process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0",
-        ssl: {
-            rejectUnauthorized: false
-        }
+        rejectUnauthorized: false
     }
 });
 
