@@ -15,6 +15,8 @@ const db = new Client({
         rejectUnauthorized: false
     }
 });
+
+db.connect();
 /*const db = knex({
     connection: {
         connectionString: process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0",
