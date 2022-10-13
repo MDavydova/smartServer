@@ -5,26 +5,20 @@ const register = require('./controllers/register')
 const profile = require('./controllers/profile')
 const image = require('./controllers/image')
 const signin = require('./controllers/signin')
-//const knex = require('knex');
+const knex = require('knex');
 
-const { Client } = require('pg');
+//const { Client } = require('pg');
 
-const db = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    }
-});
 
-db.connect();
-/*const db = knex({
+const db = knex({
     connection: {
         connectionString: process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0",
-        ssl: true,
-        rejectUnauthorized: false,
+        ssl: {
+            rejectUnauthorized: false
+        }
     }
 });
- */
+
 const app = express();
 
 app.use(cors())
