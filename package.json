@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "serve -s build",
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +17,8 @@
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "knex": "^2.3.0",
-    "pg": "^8.8.0"
+    "pg": "^8.8.0",
+    "serve": "^14.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
