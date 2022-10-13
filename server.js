@@ -24,13 +24,13 @@ app.use(cors())
 
 app.use(express.json());
 
-app.get('/api', (req, res)=> { res.send('here they are') })
+app.get('/', (req, res) => { res.status(400) })
 app.post('/signin', signin.handleSignin(db, bcrypt))
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
 app.get('/profile/:id', (req, res) => { profile.handleProfile(req, res, db)})
 app.put('/image', (req, res) => { image.handleImage(req, res, db)})
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res)})
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT,()=> {
     console.log(`app is running on port ${PORT}`);
