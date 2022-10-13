@@ -16,9 +16,6 @@ const db = knex({
     }
 });
 
-client = new pg.Client db
-client.connect()
-
 const app = express();
 
 app.use(cors())
